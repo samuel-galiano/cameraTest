@@ -1,5 +1,15 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permitir aplicativo a acessar sua camera",
+          "microphonePermission": "Permitir aplicativo a acessar seu microfone",
+          "recordAudioAndroid": true
+        }
+      ]
+    ],
     "name": "cameraTest",
     "slug": "cameraTest",
     "version": "1.0.0",
