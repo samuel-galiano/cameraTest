@@ -6,15 +6,17 @@ import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   const [ladoCamera, setladoCamera] = useState<CameraType>('back');
-  const [permissao, requestpermissao] = useCameraPermissions();
+  const [permissao, setPermissao] = useCameraPermissions();
 
   if (!permissao) {
     return <View />;
-  } else if (!permissao.granted) {
+  }
+  
+  if (!permissao.granted) {
     return (
       <View style={styles.container}>
           <Text style={styles.message}>Precisamos de permissão para acessar a camera do dispositivo</Text>
-          <TouchableOpacity onPress={requestpermissao}>
+          <TouchableOpacity onPress={setPermissao}>
               <Text>Liberar Permissão</Text>
           </TouchableOpacity>
       </View>
